@@ -13,6 +13,8 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.Map;
+
 public class anaris_US6_StepDefs {
 
     BookPage bookPage = new BookPage();
@@ -79,17 +81,22 @@ public class anaris_US6_StepDefs {
     @Then("verify {string} information must match with DB")
     public void verify_information_must_match_with_db(String bookNameFromReq) {
 
-        String actualBookName = anaris_us6_page.verifyFileName(anaris_us6_page.verifyBookName, bookNameFromReq);
-        System.out.println("From Frontend "+actualBookName);
+        String actualBookNameFromUI = anaris_us6_page.verifyFileName(anaris_us6_page.verifyBookName, bookNameFromReq);
+        System.out.println("From Frontend "+actualBookNameFromUI);
+        Assert.assertEquals(bookNameFromReq, actualBookNameFromUI);
 
         // get data from Database
         DB_Util.runQuery("select b.name,isbn,author from books b where b.name = '"+bookNameFromReq+"'");
 
+        Map<String, String> rowMap = DB_Util.getRowMap(1);
+        String actualBookNameFromMap = rowMap.get("name");
+        System.out.println("RowMap " + actualBookNameFromMap);
 
 
-        String expectedBookName = DB_Util.getFirstRowFirstColumn();
-        System.out.println("From Backend "+expectedBookName);
-        Assert.assertEquals(expectedBookName,actualBookName);
+
+        String actualBookNameFromDB = DB_Util.getFirstRowFirstColumn();
+        System.out.println("From Backend "+actualBookNameFromDB);
+        Assert.assertEquals(bookNameFromReq,actualBookNameFromDB);
 
     }
 

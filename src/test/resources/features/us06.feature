@@ -17,8 +17,8 @@ Feature: Books module
     And verify "<Book Name>" information must match with DB
     Examples:
       | Book Name | ISBN     | Year | Author | Book Category |
-      | Pamela4   | 10112021 | 2021 | Alex   | Poetry        |
-      | Pamela5   | 11112021 | 2006 | Adam   | Drama         |
+      | Pamela13   | 10112021 | 2021 | Alex   | Poetry        |
+      | Pamela14   | 11112021 | 2006 | Adam   | Drama         |
 
 
 
