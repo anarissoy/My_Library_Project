@@ -52,6 +52,9 @@ public class Anaris_US6_Page {
     @FindBy (xpath = "//table[@id='tbl_books']/tbody/tr/td[3]")
     public List<WebElement> verifyBookName;
 
+    @FindBy (xpath = "//tbody//a/text()/..")
+    public WebElement editBook;
+
     public  String verifyFileName(List<WebElement> listOfElements, String expected){
         String actual = "";
         for (WebElement each : listOfElements){
@@ -77,6 +80,14 @@ public class Anaris_US6_Page {
         //System.out.println(actual);
         //Assert.assertEquals(expected,actual);
     }
+
+    public WebElement borrowBook(String book) {
+        String xpath = "//td[3][.='" + book + "']/../td/a";
+        return Driver.getDriver().findElement(By.xpath(xpath));
+    }
+
+    @FindBy(xpath = "//tbody//td[2]")
+    public List<WebElement> allBorrowedBooksName;
 
 
 
