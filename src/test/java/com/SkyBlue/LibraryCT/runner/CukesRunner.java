@@ -6,16 +6,32 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-
         plugin = {
+                "pretty",
                 "html:target/cucumber-report.html",
-                "rerun:target/rerun.txt" ,
+                "rerun:target/rerun.txt",
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
         features = "src/test/resources/features" ,
-        glue = "com/SkyBlue/LibraryCT/steps",
+        glue = "com/anaris/step_defs" ,
         dryRun = false,
-        tags = "@smoke"
+        tags = "@user7",
+        publish = true
 )
 public class CukesRunner {
 }
+
+
+
+
+
+
+//plugin = {
+//                "html:target/cucumber-report.html",
+//                "rerun:target/rerun.txt" ,
+//                "me.jvt.cucumber.report.PrettyReports:target/cucumber"
+//        },
+//        features = "src/test/resources/features" ,
+//        glue = "com/SkyBlue/LibraryCT/steps",
+//        dryRun = false,
+//        tags = "@smoke"
