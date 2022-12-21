@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features" ,
         glue = "com/SkyBlue/LibraryCT/steps",
         dryRun = false,
-        tags = "@wip"
+        tags = "@smoke"
 )
 public class CukesRunner {
 }

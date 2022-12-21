@@ -1,4 +1,4 @@
-@us03
+@us03 @smoke
 Feature: As a data consumer, I want UI and DB book categories are match.
   @user03 @db
   Scenario: verify book categories with DB

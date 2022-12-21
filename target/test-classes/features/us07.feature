@@ -1,4 +1,4 @@
-@us07
+@us07 @smoke
 Feature: Books module
   As a students, I should be able to borrow book
   @user07 @db

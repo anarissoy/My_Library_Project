@@ -1,4 +1,4 @@
-@us05
+@us05 @smoke
 Feature: As a data consumer, I want to know genre of books are being borrowed the most
   @user05 @db
   Scenario: verify the the common book genre that’s being borrowed

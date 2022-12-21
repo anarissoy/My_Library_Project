@@ -1,6 +1,6 @@
-@us02
+@us02 @smoke
 Feature: As a librarian, I want to know borrowed books number
-  @ui @db
+  @user02 @db
   Scenario: verify the total amount of borrowed books
     Given the "librarian" on the home page
     When the librarian gets borrowed books number
